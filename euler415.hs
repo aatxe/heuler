@@ -88,4 +88,4 @@ titanic !n !m =
 {-# SPECIALIZE titanic :: Integer -> Integer -> Integer #-}
 
 main :: IO ()		
-main = print $ titanic (10^5) $ 10^8
+main = print $ titanic (10^11) $ 10^8
