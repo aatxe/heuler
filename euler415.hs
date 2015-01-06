@@ -10,17 +10,17 @@ import Data.Ratio
 cumulativePointSet :: (Integral a) => a -> a -> a
 cumulativePointSet !a !m
   | a <= 2    = 0
-  | otherwise = (pow 2 (a + 1) m) - (a^3 + 3 * a^2 + 8 * a + 12) `div` 6
+  | otherwise = pow 2 (a + 1) m - (a^3 + 3 * a^2 + 8 * a + 12) `div` 6
 {-# INLINE cumulativePointSet #-}
 
 pointSet :: (Integral a) => a -> a -> a
 pointSet !a !m
   | a <= 2    = 0
-  | otherwise = (pow 2 a m) - (a^2 + a) `div` 2 - 1
+  | otherwise = pow 2 a m - (a^2 + a) `div` 2 - 1
 {-# INLINE pointSet #-}
   
 shortcat :: (Integral a) => a -> a -> a -> a -> a -> a
-shortcat !a _ !x !n !m = (pointSet (a + 1) m) * (2 * (n + 1) - a * x)
+shortcat !a _ !x !n !m = pointSet (a + 1) m * (2 * (n + 1) - a * x)
 {-# INLINE shortcat #-}
 
 longcat :: (Integral a) => a -> a -> a -> a -> a -> a

@@ -1,6 +1,6 @@
 euler2 :: Int -> Int
-euler2 n = sum $ filter (\x -> x `rem` 2 == 0) $ fib' n
-    where fib' n = takeWhile (< n) $ map fib [1..]
+euler2 n = sum $ filter even $ fib' n
+  where fib' x = takeWhile (< x) $ map fib [1..]
 	
 fib :: Int -> Int
 fib 0 = 0
